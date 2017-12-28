@@ -5,3 +5,6 @@ lkk:main.cpp
 
 run:lkk
 	./lkk
+
+clean:
+	rm lkk*
