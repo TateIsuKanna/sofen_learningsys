@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <random>
+#include <algorithm>
 using namespace std;
 
 struct problem{
@@ -9,6 +11,15 @@ struct problem{
         string answer;
         bool issucceeded;
 };
+
+vector<int> make_rand_array(int min,int max){
+  if(min>max) swap(min,max);
+  vector<int> v;
+  for(int i=min;i<=max;i++) v.push_back(i);
+  random_device get_rand_mt;
+  shuffle(v.begin(),v.end(),get_rand_mt);
+  return v;
+}
 
 int main(){
 	cout<<"開きたいファイル名を入力してください。"<<endl;
