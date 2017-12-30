@@ -4,47 +4,28 @@
 
 int main()
 {
-	FILE *fp;
-	char fname[20];
-	char save1[2][150]={};
-	char save2[2][150]={};
-	char c[5000][2][150]={};	//改行文字の関係で配列を3個使って終了判定をしています。
-	
-	
 	printf("開きたいファイル名を入力してください。\n");
+	char fname[20];
+        //本当は%msを使って[20]とか決め打ちしないで済むように出来る．getlineを使って手動でパースしてもいい
 	scanf("%s",fname);
-	fp = fopen(fname,"r");
+	FILE* fp = fopen(fname,"r");
 	if(fp==NULL){
 		printf("ぬるぽ\n");
 		return -1;
 	}
 	
-	int i,j,k;
-	i=1;
-	fscanf(fp,"%[^,],%s",c[0][0],c[0][1]);
-	fscanf(fp,"%[^,],%s",save1[0],save1[1]);
+	char c[5000][2][150]={};
+        int count=0;
 	for(;;){
-		if(fscanf(fp,"%[^,],%s",save2[0],save2[1])==EOF){
+		if(fscanf(fp,"%s,%s",c[count][0],c[count][1])==EOF){
 			break;
 		}
-		for(j=0;j<2;j++){
-			for(k=0;k<150;k++){
-				c[i][j][k]=save1[j][k];
-				save1[j][k]=save2[j][k];
-			}
-		}
-		i++;
+                count++;
 	}
 	
 	fclose(fp);
 	
-	for(i=0;i<5000;i++){		//以下出力
-		if(c[i][0][0]=='\0'){
-			break;
-		}
-		//printf("%s",c[i][5]);
-		printf("%s %s",c[i][0],c[i][1]);
+	for(int i=0;i<count;i++){		//以下出力
+		printf("%s %s\n",c[i][0],c[i][1]);
 	}
-	printf("\n");
-	return 0;
 }
