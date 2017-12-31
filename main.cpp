@@ -46,6 +46,18 @@ int main(){
 	vector<int> rand=make_rand_array(0,problems.size()-1);
 	for(int i=0;i<q_number;i++){
 		cout<<"漢字："<<problems[rand[i]].question<<endl;
+		string response;
+		cout<<"読み：";
+		cin>>response;
+		if(response==problems[rand[i]].answer){
+			cout<<"正解！"<<endl; problems[rand[i]].issucceeded=true;
+		}else{
+			cout<<"残念！"<<endl; problems[rand[i]].issucceeded=false;
+		}
+	}
+
+	for(int i=0;i<q_number;i++){
+		cout<<problems[rand[i]].question<<" "<<problems[rand[i]].answer<<" "<<problems[rand[i]].issucceeded<<endl;
 	}
 
 	// for(auto t:problems){
