@@ -42,7 +42,13 @@ int main(){
 		problems.push_back(t);
 	}
 
-	for(auto t:problems){
-		cout<<t.question<<" "<<t.answer<<endl;
+	const int q_number=10; //出題数
+	vector<int> rand=make_rand_array(0,problems.size()-1);
+	for(int i=0;i<q_number;i++){
+		cout<<"漢字："<<problems[rand[i]].question<<endl;
 	}
+
+	// for(auto t:problems){
+	// 	cout<<t.question<<" "<<t.answer<<endl;
+	// }
 }
