@@ -42,9 +42,9 @@ int main(){
                 problems.push_back(t);
         }
 
-        const int q_number=10; //出題数
+        const int q_number=10; //全出題数
         vector<int> rand=make_rand_array(0,problems.size()-1);
-        for(int i=0;i<q_number;i++){
+        for(int i=0;i<min(q_number,(int)problems.size());i++){
                 cout<<"漢字："<<problems[rand[i]].question<<endl;
                 string response;
                 cout<<"読み：";
@@ -56,7 +56,7 @@ int main(){
                 }
         }
 
-        for(int i=0;i<q_number;i++){
+        for(int i=0;i<min(q_number,(int)problems.size());i++){
                 cout<<problems[rand[i]].question<<" "<<problems[rand[i]].answer<<" "<<problems[rand[i]].issucceeded<<endl;
         }
 
