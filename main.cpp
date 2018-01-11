@@ -16,8 +16,9 @@ vector<int> make_rand_array(int min,int max){
         if(min>max) swap(min,max);
         vector<int> v;
         for(int i=min;i<=max;i++) v.push_back(i);
-        random_device get_rand_mt;
-        shuffle(v.begin(),v.end(),get_rand_mt);
+        random_device seed_gen;
+        mt19937 engine(seed_gen());
+        shuffle(v.begin(),v.end(),engine);
         return v;
 }
 
