@@ -77,8 +77,10 @@ int main(){
                 q++;
         }
 
-        for(int i=0;i<min(q_number,(int)problems.size());i++){
+        for(int i=0,q=0;q<q_number&&i<(int)problems.size();i++){
+                if(problems[rand[i]].issucceeded) continue;
                 cout<<problems[rand[i]].question<<" "<<problems[rand[i]].answer<<" "<<problems[rand[i]].issucceeded<<endl;
+                q++;
         }
 
         // for(auto t:problems){
