@@ -63,7 +63,7 @@ int main(){
 
         const int q_number=10; //全出題数
         vector<int> rand=make_rand_array(0,problems.size()-1);
-        for(int i=0,q=0;q<min(q_number,(int)problems.size());i++){
+        for(int i=0,q=0;q<q_number&&i<(int)problems.size();i++){
                 if(problems[rand[i]].issucceeded) continue;
                 cout<<"漢字："<<problems[rand[i]].question<<endl;
                 string response;
