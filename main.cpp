@@ -6,11 +6,21 @@
 #include <algorithm>
 using namespace std;
 
+//classで色々するのは今回はちょっと遠慮しておきます
+
 struct problem{
         string question;
         string answer;
         bool issucceeded;
 };
+vector<problem> problems;
+
+void save(string file_path){
+        ofstream ofs(file_path);
+        for(auto p:problems){
+                ofs<<p.issucceeded<<endl;
+        }
+}
 
 vector<int> make_rand_array(int min,int max){
         if(min>max) swap(min,max);
@@ -27,20 +37,28 @@ int main(){
         string file_name;
         cin>>file_name;
 
-        string file_path="questions/"+file_name+".csv";
-        ifstream ifs(file_path);
-        if(!ifs){
-                cerr<<"ぬるぽ"<<"("<<file_path<<"なんてファイルないです)"<<endl;
-                return -1;
+        string file_path_without_extension="questions/"+file_name;
+        string data_file_path=file_path_without_extension+".csv";
+        ifstream data_st(data_file_path);
+        if(!data_st){
+        cerr<<"ぬるぽ"<<"("<<data_file_path<<"なんてファイルないです)"<<endl;
+        return -1;
         }
-
-        vector<problem> problems;
-        while(!ifs.eof()){
-                problem t;
-                ifs >> t.question;
-                ifs >> t.answer;
-                t.issucceeded=false;//TODO:
-                problems.push_back(t);
+        string save_file_path=file_path_without_extension+".txt";
+        ifstream save_st(save_file_path);
+        while(true){
+                problem p;
+                data_st >> p.question;
+                if(data_st.eof()){
+                        break;
+                }
+                data_st >> p.answer;
+                if(save_st){
+                        save_st >> p.issucceeded;
+                }else{
+                        p.issucceeded=false;
+                }
+                problems.push_back(p);
         }
 
         const int q_number=10; //全出題数
@@ -66,4 +84,5 @@ int main(){
         // for(auto t:problems){
         //         cout<<t.question<<" "<<t.answer<<endl;
         // }
+        save(save_file_path);
 }
