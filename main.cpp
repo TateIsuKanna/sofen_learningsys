@@ -72,7 +72,7 @@ int main(){
                 if(response==problems[rand[i]].answer){
                         cout<<"正解！"<<endl; problems[rand[i]].issucceeded=true;
                 }else{
-                        cout<<"残念！"<<endl; problems[rand[i]].issucceeded=false;
+                        cout<<"残念！正解は「"<<problems[rand[i]].answer<<"」"<<endl; problems[rand[i]].issucceeded=false;
                 }
                 q++;
         }
