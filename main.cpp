@@ -1,50 +1,51 @@
-#include<stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<vector>
 
-int main()
-{
-	FILE *fp;
-	char fname[20];
-	char save1[2][150]={};
-	char save2[2][150]={};
-	char c[5000][2][150]={};	//改行文字の関係で配列を3個使って終了判定をしています。
+using namespace std;
+
+struct problem{
+	string question;
+	string answer;
+	bool issucceeded;
+};
+
+vector<problem>problems;
+
+int main(){
+	cout<<"ファイル名を入力"<<endl;
+	string file_name;
+	cin>>file_name;
 	
-	
-	printf("開きたいファイル名を入力してください。\n");
-	scanf("%s",fname);
-	fp = fopen(fname,"r");
-	if(fp==NULL){
-		printf("ぬるぽ\n");
+	string file_path_without_extension="questions/"+file_name;
+	string data_file_path=file_path_without_extension+".csv";
+	ifstream data_st(data_file_path);
+	if(!data_st){
+		cerr<<"ぬるぽ"<<"("<<data_file_path<<"はないお。)"<<endl;
 		return -1;
 	}
-	
-	int i,j,k;
-	i=1;
-	fscanf(fp,"%[^,],%s",c[0][0],c[0][1]);
-	fscanf(fp,"%[^,],%s",save1[0],save1[1]);
-	for(;;){
-		if(fscanf(fp,"%[^,],%s",save2[0],save2[1])==EOF){
+	string save_file_path=file_path_without_extension+".txt";
+	ifstream save_st(save_file_path);
+	while(true){
+		problem p;
+		data_st >> p.question;
+		if(data_st.eof()){
 			break;
 		}
-		for(j=0;j<2;j++){
-			for(k=0;k<150;k++){
-				c[i][j][k]=save1[j][k];
-				save1[j][k]=save2[j][k];
-			}
+		data_st >>p.answer;
+		if(save_st){
+			save_st >> p.issucceeded;
 		}
-		i++;
+		else{
+			p.issucceeded=false;
+		}
+		problems.push_back(p);
 	}
 	
-	fclose(fp);
-	
-	for(i=0;i<5000;i++){		//以下出力
-		if(c[i][0][0]=='\0'){
-			break;
-		}
-		//printf("%s",c[i][5]);
-		printf("%s %s",c[i][0],c[i][1]);
+	for(auto p:problems){
+		cout<<p.question<<" "<<p.answer<<" "<<p.issucceeded<<endl;
 	}
-	printf("\n");
-	return 0;
+	
+	//save(save_file_path);
 }
