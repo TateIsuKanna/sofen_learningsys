@@ -94,9 +94,8 @@ int main(){
         if(allsucceeded()){
                 //全問正解時の処理
                 cout<<"全問正解！"<<endl;
+                reset_save();
         }
-
-        reset_save();
 
         for(auto t:problems){
                 cout<<t.question<<" "<<t.answer<<" "<<t.issucceeded<<endl;
