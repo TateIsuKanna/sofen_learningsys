@@ -15,6 +15,12 @@ struct problem{
 };
 vector<problem> problems;
 
+void reset_save(){
+        for(auto& t:problems){
+                t.issucceeded=false;
+        }
+}
+
 void save(string file_path){
         ofstream ofs(file_path);
         for(auto p:problems){
@@ -89,6 +95,8 @@ int main(){
                 //全問正解時の処理
                 cout<<"全問正解！"<<endl;
         }
+
+        reset_save();
 
         for(auto t:problems){
                 cout<<t.question<<" "<<t.answer<<" "<<t.issucceeded<<endl;
