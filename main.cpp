@@ -32,6 +32,13 @@ vector<int> make_rand_array(int min,int max){
         return v;
 }
 
+bool allsucceeded(){
+        for(auto p:problems){
+                if(!p.issucceeded) return false;
+        }
+        return true;
+}
+
 int main(){
         cout<<"開きたいファイル名を入力してください。"<<endl;
         string file_name;
