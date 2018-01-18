@@ -85,6 +85,11 @@ int main(){
                 if(++q>=q_number) break;
         }
 
+        if(allsucceeded()){
+                //全問正解時の処理
+                cout<<"全問正解！"<<endl;
+        }
+
         for(auto t:problems){
                 cout<<t.question<<" "<<t.answer<<" "<<t.issucceeded<<endl;
         }
