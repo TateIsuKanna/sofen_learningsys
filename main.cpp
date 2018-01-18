@@ -4,6 +4,9 @@
 #include <vector>
 #include <random>
 #include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 using namespace std;
 
 //classで色々するのは今回はちょっと遠慮しておきます
@@ -43,6 +46,77 @@ bool allsucceeded(){
                 if(!p.issucceeded) return false;
         }
         return true;
+}
+
+void printAA(){
+        system("clear");
+        printf("            ■                   \n");
+        printf("            ■               \n");
+        printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■ \n");
+        printf("          ■ ■              \n");
+        printf("        ■   ■              \n");
+        printf("      ■     ■              \n");
+        printf("    ■       ■              \n");
+        printf(" ■          ■              \n");
+        usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+
+        system("clear");
+        printf("            ■                       \n");
+        printf("            ■                          ■     \n");
+        printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■        \n");
+        printf("          ■ ■                ■    ■     \n");
+        printf("        ■   ■                  ■         \n");
+        printf("      ■     ■               ■   ■        \n");
+        printf("    ■       ■             ■       ■       \n");
+        printf(" ■          ■         ■               \n");
+        usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+
+        system("clear");
+        printf("            ■                                               ■ ■     \n");
+        printf("            ■                          ■       ■ ■ ■ ■ ■        \n");
+        printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■                       \n");
+        printf("          ■ ■                ■    ■        ■ ■ ■ ■ ■ ■ ■ ■ ■  \n");
+        printf("        ■   ■                  ■                   ■               \n");
+        printf("      ■     ■               ■   ■                 ■               \n");
+        printf("    ■       ■             ■       ■             ■                 \n");
+        printf(" ■          ■         ■                       ■                    \n");
+        usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+
+        system("clear");
+        printf("            ■                                               ■ ■     ■            \n");
+        printf("            ■                          ■       ■ ■ ■ ■ ■            ■        \n");
+        printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■                               ■    \n");
+        printf("          ■ ■                ■    ■        ■ ■ ■ ■ ■ ■ ■ ■ ■        ■ ■   \n");
+        printf("        ■   ■                  ■                   ■                ■     ■       \n");
+        printf("      ■     ■               ■   ■                 ■                 ■         ■  \n");
+        printf("    ■       ■             ■       ■             ■                   ■             \n");
+        printf(" ■          ■         ■                       ■                     ■              \n");
+        usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+
+        system("clear");
+        printf("            ■                                               ■ ■     ■                    ■              \n");
+        printf("            ■                          ■       ■ ■ ■ ■ ■            ■                    ■             \n");
+        printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■                               ■              ■ ■ ■ ■ ■ ■ ■     \n");
+        printf("          ■ ■                ■    ■        ■ ■ ■ ■ ■ ■ ■ ■ ■        ■ ■            ■           ■       \n");
+        printf("        ■   ■                  ■                   ■                ■     ■                   ■         \n");
+        printf("      ■     ■               ■   ■                 ■                 ■         ■             ■           \n");
+        printf("    ■       ■             ■       ■             ■                   ■                     ■               \n");
+        printf(" ■          ■         ■                       ■                     ■                   ■                \n");
+        usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+        system("clear");                          // 画面消去
+
+        while(1){
+                printf("            ■                                               ■ ■     ■                    ■                ■■    ■■\n");
+                printf("            ■                          ■       ■ ■ ■ ■ ■            ■                    ■                ■■    ■■\n");
+                printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■                               ■              ■ ■ ■ ■ ■ ■ ■          ■■    ■■\n");
+                printf("          ■ ■                ■    ■        ■ ■ ■ ■ ■ ■ ■ ■ ■        ■ ■            ■           ■          ■■    ■■\n");
+                printf("        ■   ■                  ■                   ■                ■     ■                   ■           ■■    ■■\n");
+                printf("      ■     ■               ■   ■                 ■                 ■         ■             ■             ■■    ■■\n");
+                printf("    ■       ■             ■       ■             ■                   ■                     ■                           \n");
+                printf(" ■          ■         ■                       ■                     ■                   ■                 ■■    ■■\n");
+                usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
+        system("clear");
+        }
 }
 
 int main(){
