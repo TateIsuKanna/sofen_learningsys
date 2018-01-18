@@ -63,18 +63,19 @@ int main(){
 
         const int q_number=10; //全出題数
         vector<int> rand=make_rand_array(0,problems.size()-1);
-        for(int i=0,q=0;q<q_number&&i<(int)problems.size();i++){
-                if(problems[rand[i]].issucceeded) continue;
-                cout<<"漢字："<<problems[rand[i]].question<<endl;
+        int q=0;
+        for(auto r:rand){
+                if(problems[r].issucceeded) continue;
+                cout<<"漢字："<<problems[r].question<<endl;
                 string response;
                 cout<<"読み：";
                 cin>>response;
-                if(response==problems[rand[i]].answer){
-                        cout<<"正解！"<<endl; problems[rand[i]].issucceeded=true;
+                if(response==problems[r].answer){
+                        cout<<"正解！"<<endl; problems[r].issucceeded=true;
                 }else{
-                        cout<<"残念！正解は「"<<problems[rand[i]].answer<<"」"<<endl; problems[rand[i]].issucceeded=false;
+                        cout<<"残念！正解は「"<<problems[r].answer<<"」"<<endl; problems[r].issucceeded=false;
                 }
-                q++;
+                if(++q>=q_number) break;
         }
 
         for(auto t:problems){
