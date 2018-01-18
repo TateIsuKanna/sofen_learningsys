@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void  main( )
+
+#include <unistd.h>
+int  main( )
 {
 printf("            ■                   \n");
 	printf("            ■               \n");
@@ -66,7 +68,7 @@ printf("            ■                   \n");
 	printf(" ■          ■         ■                       ■                     ■                   ■                 ■■    ■■\n");
 	usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
 
-	system("cls");                          // 画面消去
+	system("clear");                          // 画面消去
 	printf("                   \n");
 	printf("                ■ \n");
 	printf("    ■         ■  \n");
@@ -77,7 +79,7 @@ printf("            ■                   \n");
 	printf("■                 \n");
 	usleep(500000);                             // 500000マイクロ秒(0.5秒)止まる
       
-	system("cls");
+	system("clear");
 	printf("                   ■ ■\n  ");
 	printf("   ■ ■ ■ ■ ■       \n");
 	printf("                        \n");
@@ -88,7 +90,7 @@ printf("            ■                   \n");
 	printf("     ■                 \n");
 	usleep(500000);
 
-	system("cls");
+	system("clear");
 	printf("        ■           \n");
 	printf("        ■           \n");
 	printf("        ■           \n");
@@ -99,7 +101,7 @@ printf("            ■                   \n");
 	printf("        ■           \n");
 	usleep(500000);
 
-	system("cls");
+	system("clear");
 	printf("         ■              \n");
 	printf("         ■              \n");
 	printf("  ■ ■ ■ ■ ■ ■ ■   \n");
@@ -110,7 +112,7 @@ printf("            ■                   \n");
 	printf("        ■               \n");
 	usleep(500000);
 
-	system("cls");
+	system("clear");
 	printf("  ■■    ■■\n");
 	printf("  ■■    ■■\n");
 	printf("  ■■    ■■\n");
