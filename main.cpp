@@ -105,7 +105,7 @@ void printAA(){
         usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
         system("clear");                          // 画面消去
 
-        while(1){
+        for(int i=0;i<5;i++){
                 printf("            ■                                               ■ ■     ■                    ■                ■■    ■■\n");
                 printf("            ■                          ■       ■ ■ ■ ■ ■            ■                    ■                ■■    ■■\n");
                 printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■                               ■              ■ ■ ■ ■ ■ ■ ■          ■■    ■■\n");
