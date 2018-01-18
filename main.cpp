@@ -115,7 +115,7 @@ void printAA(){
                 printf("    ■       ■             ■       ■             ■                   ■                     ■                           \n");
                 printf(" ■          ■         ■                       ■                     ■                   ■                 ■■    ■■\n");
                 usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
-        system("clear");
+                system("clear");
         }
 }
 
@@ -166,9 +166,8 @@ int main(){
         }
 
         if(allsucceeded()){
-                //全問正解時の処理
-                cout<<"全問正解！"<<endl;
                 reset_save();
+                printAA();
         }
 
         for(auto t:problems){
