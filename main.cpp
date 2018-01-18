@@ -1,7 +1,9 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<regex>
 #include<vector>
+#include<cstdio>
 
 using namespace std;
 
@@ -20,7 +22,19 @@ void save(string file_path){
         }
 }
 
+
+//本当はC++17のfilesystem使いたい!!!!!
+void ls(){
+	FILE* pf=popen("ls -w 0 -C questions/*.csv","r");
+	char* file_list;
+	size_t size;
+	getline(&file_list,&size,pf);
+	pclose(pf);
+	cout<<regex_replace(string(file_list),regex(R"(questions/|\.\S*)"),"")<<endl;
+}
+
 int main(){
+	ls();
 	cout<<"ファイル名を入力"<<endl;
 	string file_name;
 	cin>>file_name;

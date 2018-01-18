@@ -1,4 +1,4 @@
-CFLAGS=-Wall -g --std=c++11
+CFLAGS=-Wall -g -std=c++11
 
 lkk:main.cpp
 	g++ $(CFLAGS) -o lkk main.cpp
