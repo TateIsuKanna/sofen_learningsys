@@ -182,9 +182,6 @@ int main(){
                 printAA();
         }
 
-        for(auto t:problems){
-                cout<<t.question<<" "<<t.answer<<" "<<t.issucceeded<<endl;
-        }
         save(save_file_path);
 }
 
