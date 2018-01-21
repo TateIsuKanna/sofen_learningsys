@@ -1,10 +1,12 @@
 CFLAGS=-Wall -g -std=c++11
 
-lkk:main.cpp
-	g++ $(CFLAGS) -o lkk main.cpp
+lkk:AA main.cpp
+	g++ $(CFLAGS) -o $@ $^
+AA:AA.cpp
+	g++ $(CFLAGS) -c -o $@ $^
 
 run:lkk
 	./lkk
 
 clean:
-	rm lkk*
+	rm lkk* AA
