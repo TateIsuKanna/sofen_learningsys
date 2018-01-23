@@ -14,10 +14,9 @@ quiz::quiz(string name){
 	string data_file_path=file_path_without_extension+".csv";
 	ifstream data_st(data_file_path);
 	if(!data_st){
-		cerr<<"ぬるぽ"<<"("<<data_file_path<<"はないお。)"<<endl;
-		//return -1;
+		throw runtime_error("ぬるぽ("+data_file_path+"はないお。)");
 	}
-	string save_file_path=file_path_without_extension+".txt";
+	save_file_path=file_path_without_extension+".txt";
 	ifstream save_st(save_file_path);
 	while(true){
 		problem p;

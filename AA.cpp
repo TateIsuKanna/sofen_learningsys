@@ -1,7 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-void printAA(){
+#include "AA.hpp"
+void AA::printAA(){
         system("clear");
         printf("            ■                   \n");
         printf("            ■               \n");

@@ -10,6 +10,7 @@
 using namespace std;
 class quiz{
 	vector<int> make_rand_array(int min,int max);
+	string save_file_path;
 	struct problem{
 		string question;
 		string answer;
@@ -18,10 +19,9 @@ class quiz{
 	public:
 		vector<problem>problems;
 		quiz(string name);
-		bool allsucceeded();
-		void reset_save();
-
-		void save(string file_path);
 		void question();
+		bool allsucceeded();
+		void save(string file_path);
+		void reset_save();
 
 };

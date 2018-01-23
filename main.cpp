@@ -7,7 +7,7 @@
 #include <random>
 #include <algorithm>
 #include <stdio.h>
-#include "AA.hpp"
+#include "quiz.hpp"
 using namespace std;
 
 //本当はC++17のfilesystem使いたい!!!!!

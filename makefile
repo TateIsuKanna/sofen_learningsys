@@ -1,14 +1,20 @@
 CFLAGS=-Wall -g -std=c++11
 
-lkk:AA quiz main.cpp
-	g++ $(CFLAGS) -o $@ $^
-AA:AA.cpp
-	g++ $(CFLAGS) -c -o $@ $^
-quiz:quiz.cpp
-	g++ $(CFLAGS) -c -o $@ $^
+lkk:main.o quiz.o AA.o
+	g++ $(CFLAGS) -o $@ $+
+
+
+main.o:main.cpp
+	g++ $(CFLAGS) -c $+
+
+quiz.o:quiz.cpp
+	g++ $(CFLAGS) -c $+
+
+AA.o:AA.cpp
+	g++ $(CFLAGS) -c $+
 
 run:lkk
 	./lkk
 
 clean:
-	rm lkk* AA quiz
+	rm -f lkk* *.o
