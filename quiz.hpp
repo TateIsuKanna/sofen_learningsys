@@ -9,7 +9,7 @@
 #include <stdio.h>
 using namespace std;
 class quiz{
-	vector<int> make_rand_array(int min,int max);
+	static vector<int> make_rand_array(int min,int max);
 	string save_file_path;
 	struct problem{
 		string question;
