@@ -23,11 +23,15 @@ void ls(){
 }
 
 int main(){
-	ls();
-	cout<<"ファイル名を入力"<<endl;
-	string file_name;
-	cin>>file_name;
-	
-	quiz q(file_name);
-	q.question();
+	try{
+		ls();
+		cout<<"ファイル名を入力"<<endl;
+		string file_name;
+		cin>>file_name;
+
+		quiz q(file_name);
+		q.question();
+	}catch(runtime_error& e){
+		cerr<<e.what()<<endl;
+	}
 }
