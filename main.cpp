@@ -17,7 +17,7 @@ int  main( )
 	system("clear");
 	printf("            ■                       \n");
 	printf("            ■                          ■     \n");
-	printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■        \n");
+	printf("  ■ ■ ■ ■ ■ ■ ■ ■ ■       ■         ■\n");
 	printf("          ■ ■                ■    ■     \n");
 	printf("        ■   ■                  ■         \n");
 	printf("      ■     ■               ■   ■        \n");
@@ -70,6 +70,7 @@ while(1){
 	printf(" ■          ■         ■                       ■                     ■                   ■                 ■■    ■■\n");
 	usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
 	system("clear");
+	usleep(500000);
 	}
 
 }
