@@ -71,6 +71,17 @@ while(1){
 	usleep(500000);                          // 500000マイクロ秒(0.5秒)止まる
 	system("clear");
 	usleep(500000);
+	printf("                                             ■ ■ ■ ■ ■ ■                     \n");
+	printf("                                        ■ ■               ■ ■           \n");
+	printf("                                     ■ ■    ■ ■ ■   ■ ■ ■    ■ ■        \n");
+	printf("                                    ■      ■    ■   ■    ■      ■    \n");
+	printf("                                    ■                           ■ \n");
+	printf("                                     ■        ■      ■         ■     \n");
+	printf("                                      ■ ■      ■ ■ ■        ■ ■         \n");
+	printf("                                         ■ ■             ■ ■                  \n");
+	printf("                                             ■ ■ ■ ■ ■ ■                       \n");
+	usleep(500000);
+	system("clear");
+	usleep(500000);
 	}
-
 }
