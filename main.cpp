@@ -12,7 +12,7 @@ using namespace std;
 
 //本当はC++17のfilesystem使いたい!!!!!
 void ls(){
-	FILE* pf=popen("ls -C questions/*.csv","r");
+	FILE* pf=popen("ls -w 2048 -C questions/*.csv","r");
 	char* file_list;
 	size_t size;
 	getline(&file_list,&size,pf);
