@@ -12,14 +12,15 @@ using namespace std;
 
 //本当はC++17のfilesystem使いたい!!!!!
 void ls(){
-	FILE* pf=popen("ls -w 0 -C questions/*.csv","r");
+	FILE* pf=popen("ls -C questions/*.csv","r");
 	char* file_list;
 	size_t size;
 	getline(&file_list,&size,pf);
 	pclose(pf);
-	cout<<regex_replace(string(file_list),regex(R"(questions/|\.\S*)"),"")<<endl;
-}
+        cout<<file_list<<endl;
 
+	//cout<<regex_replace(string(file_list),regex(R"(questions/|\.\S*)"),"")<<endl;
+}
 
 int main(){
 	ls();
