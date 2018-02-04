@@ -1,7 +1,7 @@
 CXXFLAGS=-Wall -g -std=c++11
 
 lkk:main.o quiz.o AA.o
-	g++ $(CXXFLAGS) -o $@ $+
+	$(CXX) $(CXXFLAGS) -o $@ $+
 
 run:lkk
 	./lkk
