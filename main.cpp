@@ -7,19 +7,28 @@
 #include <random>
 #include <algorithm>
 #include <stdio.h>
+
+#include <dirent.h>
+
 #include "quiz.hpp"
+
 using namespace std;
 
 //本当はC++17のfilesystem使いたい!!!!!
 void ls(){
-	FILE* pf=popen("ls -w 2048 -C questions/*.csv","r");
-	char* file_list;
-	size_t size;
-	getline(&file_list,&size,pf);
-	pclose(pf);
-        cout<<file_list<<endl;
-
-	//cout<<regex_replace(string(file_list),regex(R"(questions/|\.\S*)"),"")<<endl;
+	dirent** namelist;
+	int dir_n = scandir("questions/", &namelist, nullptr, [](const struct dirent **a, const struct dirent **b){return -alphasort(a,b);});
+	if(dir_n<0){
+		throw string("ディレクトリを読めません");
+	}
+	while(dir_n--){
+		string dir_name_str=string(namelist[dir_n]->d_name);
+		if(regex_match(dir_name_str,regex(R"(.+\.csv)"))){
+			cout<<regex_replace(dir_name_str,regex(R"(questions/|\.\S*)"),"")<<" ";
+		}
+		free(namelist[dir_n]);
+	}
+	free(namelist);
 }
 
 int main(){
