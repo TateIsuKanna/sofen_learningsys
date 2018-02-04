@@ -19,7 +19,7 @@ void ls(){
 	dirent** namelist;
 	int dir_n = scandir("questions/", &namelist, nullptr, [](const struct dirent **a, const struct dirent **b){return -alphasort(a,b);});
 	if(dir_n<0){
-		throw string("ディレクトリを読めません");
+		throw runtime_error("ディレクトリを読めません");
 	}
 	while(dir_n--){
 		string dir_name_str=string(namelist[dir_n]->d_name);
@@ -29,6 +29,7 @@ void ls(){
 		free(namelist[dir_n]);
 	}
 	free(namelist);
+	cout<<endl;
 }
 
 int main(){
