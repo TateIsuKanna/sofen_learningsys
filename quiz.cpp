@@ -62,10 +62,11 @@ void quiz::question(){
 		string response;
 		cout<<"読み：";
 		cin>>response;
-		if(response==problems[r].answer){
+		string whole_answer=problems[r].make_whole_answer();
+		if(response==problems[r].answer||response==whole_answer){
 			cout<<"正解！"<<endl; problems[r].issucceeded=true;
 		}else{
-			cout<<"残念！正解は「"<<problems[r].answer<<"」"<<endl; problems[r].issucceeded=false;
+			cout<<"残念！正解は「"<<whole_answer<<"」"<<endl; problems[r].issucceeded=false;
 		}
 		if(++q>=q_number) break;
 	}
@@ -76,4 +77,8 @@ void quiz::question(){
 	}
 
 	save(save_file_path);
+}
+string quiz::problem::make_whole_answer(){
+	cout<< ":"<<regex_replace(question,regex(R"([^あ-ん]+)"),answer)<<" ";
+	return regex_replace(question,regex(R"([^あ-ん]+)"),answer);
 }
