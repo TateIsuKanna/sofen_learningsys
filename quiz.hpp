@@ -1,12 +1,10 @@
 #include <regex>
-#include <cstdio>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <random>
 #include <algorithm>
-#include <stdio.h>
 using namespace std;
 class quiz{
 	static vector<int> make_rand_array(int min,int max);

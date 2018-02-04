@@ -1,13 +1,3 @@
-#include <regex>
-#include <cstdio>
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <random>
-#include <algorithm>
-#include <stdio.h>
-
 #include <dirent.h>
 
 #include "quiz.hpp"
