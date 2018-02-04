@@ -64,6 +64,8 @@ void quiz::question(){
 		cin>>response;
 		if(response==problems[r].answer){
 			cout<<"正解！"<<endl; problems[r].issucceeded=true;
+		}else if(response==problems[r].question){
+			cout<<"ありがちな間違い(操作ミス)"<<endl;
 		}else{
 			cout<<"残念！正解は「"<<problems[r].answer<<"」"<<endl; problems[r].issucceeded=false;
 		}
